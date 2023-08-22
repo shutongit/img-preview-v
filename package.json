@@ -1,0 +1,32 @@
+{
+  "name": "img-preview-v",
+  "version": "1.0.2",
+  "description": "一个vue的图片预览器，支持多图预览",
+  "keywords": [
+    "vue",
+    "image",
+    "preview"
+  ],
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
+    "@vueuse/core": "^10.3.0",
+    "img-preview-v": "^1.0.1",
+    "lodash": "^4.17.21",
+    "vite-plugin-css-injected-by-js": "^3.3.0",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.4.5"
+  }
+}
