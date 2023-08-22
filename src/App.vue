@@ -1,35 +1,34 @@
 <script setup>
 import { ref } from 'vue'
-// import ImageViewer from './components/ImageViewer.vue'
 import { ImagePreview } from 'img-preview-v'
-// import { ImagePreview } from '../dist/image-preview.es'
 
 const show = ref(false)
-/** 显示图片是图 */
+/** 显示图片显示图片视图 */
 function handShowImage() {
   show.value = true
+  urlList.value = urlList1.value
+}
+function handShowManyImage() {
+  show.value = true
+  urlList.value = urlList2.value
 }
 function close() {
   show.value = false
 }
-
-const urlList = ref([
+const urlList = ref([])
+const urlList1 = ref([
+  'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+])
+const urlList2 = ref([
   'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
   'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
 ])
 </script>
 
 <template>
-  <button @click="handShowImage">点击显示</button>
+  <button @click="handShowImage">点击显示一张</button>
+  <button @click="handShowManyImage">点击显示多张</button>
   <ImagePreview v-if="show" :url-list="urlList" @close="close"></ImagePreview>
-  <!-- <ImageViewer
-    v-if="show"
-    :url-list="[
-      'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
-      'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
-    ]"
-    :zIndex="9007199254740991"
-    @close="close"></ImageViewer> -->
 </template>
 
 <style scoped>
