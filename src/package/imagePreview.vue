@@ -186,9 +186,15 @@ const imageStyle = computed(() => {
 
 /** 获取图层层级 */
 const computedZIndex = computed(() => {
+  const elements = Array.from(document.querySelectorAll('*'))
+  const zIndexValues = elements.map((el) =>
+    parseFloat(getComputedStyle(el).zIndex)
+  )
+  // 现存dom中最大的zIndex
+  const maxZIndxe = Math.max(...zIndexValues.filter((val) => !isNaN(val)))
   return isNumber(props.zIndex)
-    ? props.zIndex + defaultInitialZIndex
-    : defaultInitialZIndex
+    ? props.zIndex
+    : defaultInitialZIndex + maxZIndxe
 })
 
 /** 隐藏关闭 */
